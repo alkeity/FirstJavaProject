@@ -1,0 +1,21 @@
+package net.alkeity.homework.homework3.task5.impl;
+
+import net.alkeity.homework.homework3.task5.InstrumentMusical;
+
+public class Cello extends InstrumentMusical {
+    public Cello(String brand, String name, String description, String history, String sound) {
+        super(brand, name, description, history);
+        setSound(sound);
+    }
+
+    @Override
+    public String toString() {
+        return "Cello{" +
+                "brand='" + getBrand() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", history='" + getHistory() + '\'' +
+                ", sound='" + getSound() + '\'' +
+                '}';
+    }
+}
