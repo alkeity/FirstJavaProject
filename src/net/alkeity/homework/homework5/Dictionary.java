@@ -1,5 +1,8 @@
 package net.alkeity.homework.homework5;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Dictionary {
     private String language;
     private String translationLanguage;
@@ -35,6 +38,36 @@ public class Dictionary {
         // TODO check if folder exists
         this.dirPath = dirPath;
     }
+
+    public void addWord(String word, String meaning) {
+        Word newWord = new Word(word, meaning);
+        ArrayList<Word> dict = getDictionaryByLetter(word.charAt(0));
+        dict.add(newWord);
+        saveDictionaryByLetter(word.charAt(0), dict);
+    }
+
+    public void addWord(String word) {}
+
+    public Word getWord(String word) {
+        ArrayList<Word> dict = getDictionaryByLetter(word.charAt(0));
+        // TODO get word using binary search, increment counter, record counter and save file
+        return new Word("dummy");
+    }
+
+    public ArrayList<Word> getDictionaryByLetter(char letter) {
+        // TODO get obj list from specified file
+        ArrayList<Word> dict = new ArrayList<Word>();
+        return dict;
+    }
+
+    public void saveDictionaryByLetter(char letter, ArrayList<Word> dict) {
+        dict.sort((word1, word2) -> word1.getWord().compareToIgnoreCase(word2.getWord()));
+        // TODO
+    }
+
+    public ArrayList<Word> getTop10Words() {}
+
+    public ArrayList<Word> getBottom10Words() {}
 
     @Override
     public boolean equals(Object o) {
